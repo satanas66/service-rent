@@ -28,7 +28,7 @@ En este tipo de arquitectura hexagonal se cumplen las reglas de dependencia de f
 
 * INFRAESTRUCTURE => APPLICATION => DOMAIN 
 
-## Analysis, development an test  
+## Analysis, development an tests 
 
 ### Business entities
 
@@ -38,7 +38,7 @@ Después de un breve análisis de los requerimientos he concluido que necesito t
 * CustomerLoyalty: Representa las bonificaciones en puntos que tiene un cliente.
 * Rent: Representa tanto alquiler como a la devolución de un coche.
 
-Estos entes de negocio los he modelado en Java y los he creado mediatne un script sql lanzado en tiempo de ejecución en base de datos H2
+Estos entes de negocio los he modelado en Java y los he creado mediante un script sql lanzado en tiempo de ejecución en base de datos H2
 
 ### Use cases
 
@@ -53,7 +53,7 @@ Siguiendo la arquitectura hexagonal el proyecto está modularizado en tres nivel
 
 En cada múdulo se definen, programan y desarrollan todas aquellas funcionalidades para cumplir con los requisitos del documento Java developer challenge.pdf
 
-Para facilitar la cohesión entre los entes de negocio por cada uno se genera la siguiente estructura de carpetas que contendra infraestructure, application y domain.
+Para facilitar la cohesión entre los entes de negocio por cada uno se genera una estructura de carpetas que contendra infraestructure, application y domain.
 
 #### Domain 
 
@@ -100,15 +100,19 @@ Para el alquiler de un coche es necesario proveer al servicio de la siguiente in
 * fecha_inicio con formato dd/MM/yyyy
 * fecha_fin con formato dd/MM/yyyy
 * tipo_coche puede ser premium, suv o small
-* nombre
-* dni
+* nombre del que alquila
+* dni del que alquila
 * cantidad debe ser un valor entero
+
+Cada vez que se realiza un alquiler se actualiza el stock y las bonificaciones.
 
 #### Car Devolution (GET)
 
 Este servicio se publicará en la siguiente url: http://localhost:8091/rents/devolution/
 
 Para realizar una devolución es necesario indicar el identificador del alquiler realizado (Consultar los alquileres actuales).
+
+Cada vez que se realiza una devolución se actualiza el stock
 
 ### Test
 
