@@ -19,6 +19,7 @@ Las tecnologías más relevantes para el desarrollo del proyecto service-rent so
 * Lombok 1.18.24
 * JUnit 5.8.2
 * Mockito 4.5.1
+* POSTMAN: Para probar los servicios publicados.
 
 ### Architecture 
 
@@ -59,19 +60,21 @@ Para facilitar la cohesión entre los entes de negocio por cada uno se genera un
 
 En esta carpeta se detallan las entidades de negocio e interfaces
  
-En cuanto a las Interfaces:
+En cuanto a las Interfaces son las abstracciones que uso para la conexión a base de datos, definición de los casos de uso y también para definir metodos que no me provee la interfaz JPARepsitory.
 
 * Interfaz de repositorio: Se refiere a la interfaz JPARepository
-* Interfaz de repositorio extendida: La uso para implementar métodos mediantes API-Criteria que no me proporciona la interfaz JpaRepository
+* Interfaz de repositorio extendida: Se refiere a la interfaz que provee de elasticidad a la interfaz JPARepository
 * Interfaz de servicio: Se refiere a la interfaz de casos de uso
 
 #### Application
 
-En esta carpeta se implementan los casos de uso definidos en las interfaces
+En esta carpeta se implementan los casos de uso definidos en las interfaces de los servicios.
 
 #### Infraestructure
 
-En esta carpeta se implementan las clases que publicaran los servicios que serán consumidos a posteriori
+En esta carpeta se implementan las clases que publicaran los servicios que serán consumidos a posteriori.
+
+En este nivel también se implementan las interfaces que proveen de elasticidad a la interfaz JPARepository  mediante API-Criteria.
 
 ### Services 
 
