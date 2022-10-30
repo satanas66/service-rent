@@ -120,7 +120,7 @@ Se han realizado un total de 9 test entre unitarios y de integración para la ma
 
 ### Notes
 
-Al tratarse de una prueba de habilidades de análisis, diseño, estructura y desarrollo/pruebas donde el único input es un documento de requisitos, este proyecto tiene muchas carencias que espero lo entiendan.
+Al tratarse de una prueba de habilidades de análisis, diseño, estructura y desarrollo/pruebas donde el único input es un documento de requisitos, este proyecto tiene muchas carencias como por ejemplo:
 
 * No se han realizado test para todos los casos posibles
 * No se han realizado control ni lanzamiento de excepciones
